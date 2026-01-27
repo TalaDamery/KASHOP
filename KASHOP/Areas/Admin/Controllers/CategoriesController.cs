@@ -29,5 +29,17 @@ namespace KASHOP.Areas.Admin.Controllers
             }
             return View("create",request);
         }
-    }
+
+        public IActionResult remove(int id)
+        {
+            var category = context.Categories.Find(id);
+            if (category != null)
+            {
+                context.Categories.Remove(category);
+                context.SaveChanges();
+            }
+            return RedirectToAction(nameof(Index));
+        }
+ 
+}
 }
