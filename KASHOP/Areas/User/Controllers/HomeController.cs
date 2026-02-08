@@ -12,5 +12,10 @@ namespace KASHOP.Areas.User.Controllers
             var categories = context.Categories.ToList();
             return View(categories);
         }
+        public IActionResult Product()
+        {
+            var product = context.Products.ToList();
+            return View(product);
+        }
     }
 }
